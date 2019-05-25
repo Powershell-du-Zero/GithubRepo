@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+  nginx:
+    image: powershellduzero/github_repos
+    environment:
+      GITHUB_NAME: PowerShell du Zero
+      GITHUB_URI: https://github.com/PowerShell-du-Zero
+      GITHUB_AVATAR: https://avatars1.githubusercontent.com/u/46657507
+      GITHUB_USERNAME: PowerShell-du-Zero
+    restart: on-failure
+    labels:
+      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:repo.powershell-du-zero.fr"
